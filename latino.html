@@ -1,0 +1,899 @@
+
+
+  
+
+
+
+
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>ESPN peru</title>
+    
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <style>
+       body {
+      margin: 0;
+       background: #000000;
+      font-family: 'arial', sans serif;
+    }
+    .contenedor {
+      background: #000000;
+      width: 50%;
+      margin: 0 auto;
+      padding: 10px 10px;
+      text-align: justify;
+    }
+    
+    .contenedor img {
+      width: 100%;
+    }
+    
+    @media (max-width:600px)  { 
+      .contenedor {
+        width: 90%;
+      }
+    }
+    
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 15px;
+        height: 0;
+         overflow: hidden;
+    }
+    
+    .video-container iframe {
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .topnav {
+      overflow: hidden;
+      background-color: #000000;
+    }
+    
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 12px;
+    }
+    
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    
+    .topnav a.active {
+      background-color: #68C420;
+      color: white;
+    }
+    
+    .topnav .icon {
+      display: none;
+    }
+    
+
+
+#changeVideo {
+  position: absolute;
+background-color: black;
+  top: 0px;
+  left: 0px;
+
+  opacity: 0;
+  transition: opacity .3s ease;
+  cursor: pointer;
+
+  height: 100%;
+    width:170px;
+    border: 1 px transparent;
+    font-family: 'GestaRegular', Arial, Helvetica, sans-serif;
+    overflow: auto;
+
+  /* Additional styles just to increase visual appeal */
+  color: red;
+  font-weight: bold;
+  line-height: 25px;
+  text-align: LEFT;
+  /* End */
+}
+
+/* On hovering the video, show the button */
+video:hover~#changeVideo {
+  opacity: 1.5;
+
+}
+
+#changeVideo:hover {
+  opacity: 1;
+  color:#ff0000;
+}
+
+
+
+
+
+
+::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-track{
+
+  border: 0ch transparent;
+
+}
+
+
+button {
+margin: 0ch;
+text-align: left;
+text-decoration: none;
+font-size: 12px;
+cursor: pointer;
+  font-weight: bold;
+  width:120px;
+ position: absolute;
+  background-color: transparent;
+  outline: none;
+text-decoration: aliceblue;
+   border: solid gray;
+    padding: 5px; color: rgb(238, 231, 231);
+      border-radius: 2px;
+
+}
+button:focus {
+  border: none;
+  background-color: rgb(255, 9, 9);
+}
+
+button:hover {
+background-color: rgb(243, 7, 7);
+
+}
+
+            .button {
+ background-color: transparent;
+  border: 3px solid Black;
+  align:right;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+    font-weight: bold;
+    width: 115px;
+ border: none;
+  background-color: transparent;
+  outline: none;
+text-decoration: aliceblue;
+   border: solid gray;
+  padding: 5px; color: rgb(238, 231, 231);
+      border-radius: 2px;
+  }
+    </style>
+  
+    </head>
+    
+    <body>
+     
+      <div class="contenedor">
+        <div class="topnav" id="myTopnav">
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+      <p align="right">
+        <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" /> </p>
+    <div class="video-container">Loading the player...
+     
+     
+          <iframe id="iframe" width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen="true" allow="autoplay; encrypted-media;" name="iframe" src=""></iframe>
+           
+     </div>
+ 
+     <div id="changeVideo">  
+        <ul>
+          <li> <button onclick="mostrarMensaje1()">24 HORAS</button></li>
+          <li><button onclick="mostrarMensaje2()">GOLPLAY</button></li>
+          <li><button onclick="mostrarMensaje3()">AMERICATV</button></li>
+          <li><button onclick="mostrarMensaje4()">AMERICATV-PE</button></li>
+          <li><button onclick="mostrarMensaje5()">ANIMAL-PLANET</button></li>
+          <li><button onclick="mostrarMensaje6()">ATV </button></li>
+          <li><button onclick="mostrarMensaje7()">TV ES</button></li>
+          <li><button onclick="mostrarMensaje8()">CARTONITO</button></li>
+          <li> <button onclick="mostrarMensaje9()">C5N</button></li>
+          <li><button onclick="mostrarMensaje10()">CANAL 13</button></li>
+          <li><button onclick="mostrarMensaje11()">EL NUEVE</button></li>
+          <li><button onclick="mostrarMensaje12()">CANAL á</button></li>
+          <li><button onclick="mostrarMensaje13()">CARACOL</button></li>
+          <li><button onclick="mostrarMensaje14()">ECDF</button></li>
+          <li><button onclick="mostrarMensaje15()">CHIEVISION</button></li>
+          <li><button onclick="mostrarMensaje16()">CINE-LATINO</button></li>
+              <li> <button onclick="mostrarMensaje17()">CNN CHILE</button></li>
+              <li><button onclick="mostrarMensaje18()">COMEDY CE</button></li>
+              <li><button onclick="mostrarMensaje19()">CRONICA HD</button></li>
+              <li><button onclick="mostrarMensaje20()">DEPORT TV</button></li>
+              <li><button onclick="mostrarMensaje21()">DSPORTS CO</button></li>
+              <li><button onclick="mostrarMensaje22()">DSPORTS AR</button></li>
+              <li><button onclick="mostrarMensaje23()">DSPORTS URU</button></li>
+              <li><button onclick="mostrarMensaje24()">DSPORTS PE</button></li>
+                  <li> <button onclick="mostrarMensaje25()">DSPORTS EC</button></li>
+                  <li><button onclick="mostrarMensaje26()">DSPORTS CH</button></li>
+                  <li><button onclick="mostrarMensaje27()">DSPORTS 2</button></li>
+                  <li> <button onclick="mostrarMensaje28()">DNEWS</button></li>
+                  <li><button onclick="mostrarMensaje29()">DSPORTS EV</button></li>
+                  <li><button onclick="mostrarMensaje30()">DSPORTS EV</button></li>
+                  <li><button onclick="mostrarMensaje31()">DSPORTS EV</button></li>
+                  <li><button onclick="mostrarMensaje32()">DSPORTS EV</button></li>
+                  <li><button onclick="mostrarMensaje33()">DSPORTS EV</button></li>
+                  <li><button onclick="mostrarMensaje34()">DSPORTS+</button></li>
+                  <li><button onclick="mostrarMensaje35()">TV PUBLICA</button></li>
+                      <li> <button onclick="mostrarMensaje36()">DISCOVERY ID</button></li>
+                      <li><button onclick="mostrarMensaje37()">DKIDS</button></li>
+                      <li><button onclick="mostrarMensaje38()">TURBO</button></li>
+                      <li><button onclick="mostrarMensaje39()">D-CHANNAL</button></li>
+                      <li><button onclick="mostrarMensaje40()">D-JUNIOR</button></li>
+                     <!-- <li><button onclick="mostrarMensaje41()">EL DJAZAIRIA</button></li>
+                      <li><button onclick="mostrarMensaje42()">ELHADDEF</button></li>-->
+                      <li><button onclick="mostrarMensaje43()">ELTRECE</button></li>
+                          <li> <button onclick="mostrarMensaje44()">ENCUENTRO</button></li>     
+                          <li> <button onclick="mostrarMensaje45()">ESPN 2 AR</button></li>
+                          <li> <button onclick="mostrarMensaje46()">ESPN 2 PE</button></li>
+                          <li><button onclick="mostrarMensaje47()">ESPN 2 MEX</button></li>
+                          <li><button onclick="mostrarMensaje48()">ESPN 3 MEX</button></li>
+                          <li> <button onclick="mostrarMensaje49()">ESPN 3 AR</button></li>
+                          <li><button onclick="mostrarMensaje50()">ESPN 3 PE</button></li>
+                          <li><button onclick="mostrarMensaje51()">ESPN CO</button></li>
+                          <li><button onclick="mostrarMensaje52()">ESPN EXTRA</button></li>
+                          <li><button onclick="mostrarMensaje53()">ESPN MEX</button></li>
+                          <li><button onclick="mostrarMensaje54()">OE</button></li>
+                          <li><button onclick="mostrarMensaje55()">FILM&ARTS</button></li>
+                          <li><button onclick="mostrarMensaje56()">FOOD</button></li>
+                              <li> <button onclick="mostrarMensaje57()">FOX MEX</button></li>
+                              <li><button onclick="mostrarMensaje58()">FOX CHILE</button></li>
+                              <li><button onclick="mostrarMensaje59()">FOX AR</button></li>
+                              <li><button onclick="mostrarMensaje60()">FOX2 CHILE</button></li>
+                              <li><button onclick="mostrarMensaje61()">FOX3 CHILE</button></li>
+                              <li><button onclick="mostrarMensaje62()">FOX3 MEX</button></li>
+                              <li><button onclick="mostrarMensaje63()">ESPN PREMIUM</button></li>
+                              <li><button onclick="mostrarMensaje64()">GOLTV</button></li>
+                                  <li> <button onclick="mostrarMensaje65()">HGTV</button></li>     
+                                  <li> <button onclick="mostrarMensaje66()">HISTORY2</button></li>
+             <li><button onclick="mostrarMensaje67()">HISTORY</button></li>
+      <li><button onclick="mostrarMensaje68()">LN</button></li>
+      <li><button onclick="mostrarMensaje69()">A3D</button></li>
+      <li><button onclick="mostrarMensaje70()">TV PUBLICA</button></li>
+          <li> <button onclick="mostrarMensaje71()">LATINA</button></li>
+          <li><button onclick="mostrarMensaje72()">MAGAZINE</button></li>
+          <li><button onclick="mostrarMensaje73()">MEGA</button></li>
+          <li><button onclick="mostrarMensaje74()">GEOGRAPHIC</button></li>
+          <li><button onclick="mostrarMensaje75()">NET TV</button></li>
+          <li><button onclick="mostrarMensaje76()">NICK</button></li>
+          <li><button onclick="mostrarMensaje77()">PARAMOUNT+</button></li>
+          <li><button onclick="mostrarMensaje78()">RCN COL</button></li>
+              <li> <button onclick="mostrarMensaje79()">CANAL10 </button></li>     
+              <li> <button onclick="mostrarMensaje80()">STAR CHANAL</button></li>
+              <li> <button onclick="mostrarMensaje81()">SYFY</button></li>
+              <li><button onclick="mostrarMensaje82()">AMERICATV</button></li>
+              <li><button onclick="mostrarMensaje83()">TELEDOCE</button></li>
+              <li><button onclick="mostrarMensaje84()">TELEFE</button></li>
+              <li><button onclick="mostrarMensaje85()">TELEMUNDO</button></li>
+              <li><button onclick="mostrarMensaje86()">TVN</button></li>
+              <li><button onclick="mostrarMensaje87()">TLC</button></li>
+              <li><button onclick="mostrarMensaje88()">TN</button></li>
+                  <li> <button onclick="mostrarMensaje89()">TNT</button></li>     
+                  <li> <button onclick="mostrarMensaje90()">TNT CHILE2</button></li>
+                  <li> <button onclick="mostrarMensaje91()">TNT CHILE3</button></li>
+                  <li><button onclick="mostrarMensaje92()">TNT CHILE</button></li>
+                  <li><button onclick="mostrarMensaje93()">TNT AR</button></li>
+                  <li><button onclick="mostrarMensaje94()">TV+</button></li>
+                  <li><button onclick="mostrarMensaje95()">TYC SPORTS</button></li>
+                  <li><button onclick="mostrarMensaje96()">GOLDEN</button></li>
+                  <li><button onclick="mostrarMensaje97()">VTV</button></li>
+                  <li><button onclick="mostrarMensaje98()">VTV+</button></li>
+                      <li> <button onclick="mostrarMensaje99()">WBTV</button></li>     
+                      <li> <button onclick="mostrarMensaje100()">WILAX</button></li>
+                      <li> <button onclick="mostrarMensaje101()">WIN</button></li>
+                      <li> <button onclick="mostrarMensaje102()">WIN+</button></li>
+                      <li> <button onclick="mostrarMensaje103()">ESPN EXTRAMEX</button></li>
+                      <li> <button onclick="mostrarMensaje104()">DNEWS EC</button></li>
+                      <li> <button onclick="mostrarMensaje105()">LIGA 1 PE</button></li>
+                      <li> <button onclick="mostrarMensaje106()">LIGA 1 MAX</button></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </ul>
+      </div>
+
+    </div>
+
+
+  
+    <script type="text/javascript">
+        function mostrarMensaje1() {
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1001"
+      
+      }
+      
+      
+      function mostrarMensaje2() {
+      document.getElementById("iframe").src = "goles_embed.html"
+      }
+      
+      function mostrarMensaje3() { 
+      
+        document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1009"
+      
+      
+      }
+      
+      function mostrarMensaje4() {
+        // AMERICA TV ARGENTINA
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1011"
+      }
+      
+      function mostrarMensaje5() {
+        //AMERICA TV PERU
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1012"
+      }
+        
+        
+      function mostrarMensaje6() {
+      // ATV PERU
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1016"
+      }
+        
+       
+      function mostrarMensaje7() {
+        // NONE
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1017"
+      }
+        
+  
+        function mostrarMensaje8() {
+
+          //CARTOONITO
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1027"
+      }
+        
+          function mostrarMensaje9() {
+            //C5N
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1028"
+      }
+        
+        
+        
+          function mostrarMensaje10() {
+            //CANAL 13
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1030"
+      }
+        
+        
+            function mostrarMensaje11() {
+              // canal 10 uruguay
+              
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1032"
+      }
+        
+        
+              function mostrarMensaje12() {
+
+                // canal a
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1033"
+      }
+        
+        
+        
+                function mostrarMensaje13() {
+                  //caracol colombia
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1035"
+      }
+        
+        
+                  function mostrarMensaje14() {
+                    // ecdf ecuador
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1038"
+      }
+        
+        
+                  function mostrarMensaje15() {
+                    // chile vesion
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1040"
+      }
+                    function mostrarMensaje16() {
+
+                      //cine latino
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1045"
+      }
+        
+        
+                      function mostrarMensaje17() {
+                        //cnn chile
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1049"
+      }
+        
+        
+                        function mostrarMensaje18() {
+                          // comedy central
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1053"
+      }
+                          function mostrarMensaje19() {
+                            // cronica hd
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1055"
+      }
+        
+        
+            function mostrarMensaje20() { 
+              // deportv argentina
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1056"
+      }
+              function mostrarMensaje21() { 
+                // directv sports
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1057"
+      }
+        
+        
+                function mostrarMensaje22() { 
+                  //directv sports uruguay
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1058"
+      }
+        
+        
+                  function mostrarMensaje23() { 
+                    // directv sports colombia
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1059"
+      }
+        
+        
+                    function mostrarMensaje24() { 
+                        // directv sports PERU
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1060"
+      }
+        
+        
+                      function mostrarMensaje25() { 
+                         // directv sports ECUADOR
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1061"
+      }
+        
+                        function mostrarMensaje26() { 
+                          // DIRECTV SPORTS CHILE
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1062"
+      }
+        
+        
+                          function mostrarMensaje27() {
+                            // DIRECTV SPORTS 2
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1063"
+      }
+        
+                            function mostrarMensaje28() { 
+                              // DNEWS
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1064"
+      }
+        
+        
+                              function mostrarMensaje29() { 
+                                // D-NWES 700 - 1700 HD
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1065"
+      }
+        
+        
+                                function mostrarMensaje30() { 
+                                  // DIRECTV EVENTOS
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1066"
+      }
+        
+        
+                                  function mostrarMensaje31() {
+                                    // DIRECTV EVENTOS
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1067"
+      }
+        
+        
+                                    function mostrarMensaje32() { 
+                                        // DIRECTV EVENTOS
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1069"
+      }
+        
+                                      function mostrarMensaje33() {
+                                        // DIRECTV EVENTOS
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1070"
+      }
+        
+        
+                                        function mostrarMensaje34() { 
+                                             // DIRECTV +
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1071"
+      }
+        
+        
+                                          function mostrarMensaje35() { 
+                                              // DISCOVERY HEALTHY
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1074"
+      }
+        
+        
+                                            function mostrarMensaje36() { 
+                                              // DISCOVERY ID
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1076"
+      }
+        
+                                              function mostrarMensaje37() { 
+                                                //DISCOVERY KIDS
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1079"
+      }
+        
+        
+                                                function mostrarMensaje38() { 
+                                                  // DISCOVERY TURBO
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1081"
+      }
+        
+        
+                                                 function mostrarMensaje39() { 
+                                                  // DISNEY CHANNEL
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1084"
+      }
+        
+        
+        
+        
+                                                   function mostrarMensaje40() {
+                                                    // DISNEY JUNIOR
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1087"
+      }
+        
+        
+        
+                                                     function mostrarMensaje41() { 
+                                                      // CANAL E
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1089"
+      }
+        
+        
+        
+                                                       function mostrarMensaje42() { 
+                                                        // GOLDEN
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1090"
+      }
+        
+                                                         function mostrarMensaje43() { 
+                                                          // EL TRECE
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1095"
+      }
+        
+        
+                                                           function mostrarMensaje44() { 
+                                                            // ENCUENTRO
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1096"
+      }
+        
+                                                             function mostrarMensaje45() { 
+                                                              // ESPN 
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1098"
+      }
+        
+        
+                                                               function mostrarMensaje46() { 
+                                                           // ESPN 
+     document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1099"
+     }
+        
+                                                                 function mostrarMensaje47() {
+                                        // ESPN  2 MEX
+     document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1100"
+      }
+        
+        
+                    function mostrarMensaje48() {
+                      // ESPN 3 MEX
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1101"
+      }
+        
+      function mostrarMensaje49() {
+                      // ESPN 3
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1102"
+      }
+
+      function mostrarMensaje50() {
+                      // ESPN 3 PE
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1103"
+      }
+      function mostrarMensaje51() {
+                      // ESPN 
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1106"
+      }
+
+      function mostrarMensaje52() {
+                      // ESPN  EXTRA
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1107"
+      }
+      function mostrarMensaje53() {
+                      // ESPN  MEX
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1108"
+      }
+      function mostrarMensaje54() {
+                      // EUROPA EURPA EA
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1110"
+      }
+      function mostrarMensaje55() {
+                      // FILMS ARTS
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1111"
+      }
+      function mostrarMensaje56() {
+                      // FOOD
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1113"
+      }
+      function mostrarMensaje57() {
+                      // FOX SPORTS MEX
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1115"
+      }
+      function mostrarMensaje58() {
+                      // FOX SPORTS CHILE
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1117"
+      }
+      function mostrarMensaje59() {
+                      // FOX SPORTS ARGENTINA
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1118"
+      }
+      function mostrarMensaje60() {
+                      // FOX SPORTS 2 CHILE
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1122"
+      }
+
+      function mostrarMensaje61() {
+                      // FOX SPORTS 3 CHILE
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1123"
+      }
+      function mostrarMensaje62() {
+                      // FOX SPORTS 3 MEX
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1124"
+      }
+      function mostrarMensaje63() {
+                      // ESPN PREMIUM 
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1125"
+      }
+      function mostrarMensaje64() {
+                      // GOLTV ECUADOR 
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1134"
+      }
+      function mostrarMensaje65() {
+                      // HGTV
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1144"
+      }
+      function mostrarMensaje66() {
+                      // HISTORY 2
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1147"
+      }
+      function mostrarMensaje67() {
+                      // HISTORY 
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1148"
+      }
+      function mostrarMensaje68() {
+                      // LN+
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1154"
+      }
+      function mostrarMensaje69() {
+                      // LA RED
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1155"
+      }
+      function mostrarMensaje70() {
+                      // TV PUBLICA
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1156"
+      }
+      function mostrarMensaje71() {
+                      // LATINA PE
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1157"
+      }
+      function mostrarMensaje72() {
+                      // CUIDAD NAGAZINE
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1160"
+      }
+
+      function mostrarMensaje73() {
+                      //MEGA TV
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1162"
+      }
+      function mostrarMensaje74() {
+                      // NACIOL GEOGRAPHIC WILD
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1169"
+      }
+      function mostrarMensaje75() {
+                      // NET TV
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1172"
+      }
+      function mostrarMensaje76() {
+                      // NICK TV
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1175"
+      }
+      function mostrarMensaje77() {
+                      // PARAMOUNT+
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1181"
+      }
+      function mostrarMensaje78() {
+                      // NO SE SABE
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1185"
+      }
+      function mostrarMensaje79() {
+                      // CANAL 10 URUGUAY
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1187"
+      }
+      function mostrarMensaje80() {
+                      // SONY CHANNEL
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1190"
+      }
+      function mostrarMensaje80() {
+                      // TEVE COMPRAS
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1196"
+      }
+      function mostrarMensaje81() {
+                      // SYFY TV
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1211"
+      }
+      function mostrarMensaje82() {
+                      // AMERICA TV 
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1214"
+      }
+      function mostrarMensaje83() {
+                      // TELE DOCE
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1215"
+      }
+      function mostrarMensaje84() {
+                      // TELEFE
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1216"
+      }
+      function mostrarMensaje85() {
+                      // TELE MUNDO
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1217"
+      }
+      function mostrarMensaje86() {
+                      // TVN
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1221"
+      }
+      function mostrarMensaje87() {
+                      // DISCOVERY TLC
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1223"
+      }
+      function mostrarMensaje88() {
+                      // TN
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1225"
+      }
+      function mostrarMensaje89() {
+                      // TNT WB TV
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1227"
+      }
+      function mostrarMensaje90() {
+                      // TNTSPORTS CHILE 2
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1230"
+      }
+      function mostrarMensaje91() {
+                      // TNTSPORTS CHILE 3
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1231"
+      }
+      function mostrarMensaje92() {
+                      // TNTSPORTS CHILE 
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1232"
+      }
+      function mostrarMensaje93() {
+                      // TNTSPORTS ARGENTINA
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1233"
+      }
+      function mostrarMensaje94() {
+                      // TV+
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1236"
+      }
+      function mostrarMensaje95() {
+                      // TYC SPORTS
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1240"
+      }
+      function mostrarMensaje96() {
+                      // UNIVERSAL TV
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1243"
+      }
+      function mostrarMensaje97() {
+                      // VTV
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1245"
+      }
+      function mostrarMensaje98() {
+                      // VTV+
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1246"
+      }
+      function mostrarMensaje99() {
+                      //WBTV
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1248"
+      }
+      function mostrarMensaje100() {
+                      //WILAX
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1249"
+      }
+      function mostrarMensaje101() {
+                      //WIN SPORTS
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1250"
+      }
+      function mostrarMensaje102() {
+                      //WIN SPORTS+
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1251"
+      }
+      function mostrarMensaje103() {
+                      //ESPN EXTRA MEX
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1261"
+      }
+      function mostrarMensaje104() {
+                      //DNEWS ECUADOR
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1264"
+      }
+      function mostrarMensaje105() {
+                      //LIGA 1  PE
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1271"
+      }
+      function mostrarMensaje106() {
+                      //LIGA 1 MAX
+      document.getElementById("iframe").src = "https://embed.pelotalibre.com/dtvpl2.html?id=1272"
+      }
+      </script>
+
+
+    <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
+    <footer>
+    
+    
+    
+    </footer>
+
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+  
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></body></html>
