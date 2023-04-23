@@ -1,0 +1,53 @@
+
+<html lang="es">
+   <head>
+   <meta name="robots" content="noindex" />
+   <script src="//cdn.jsdelivr.net/npm/@clappr/player@0.4.0/dist/clappr.min.js"></script>
+   <script src="//cdn.jsdelivr.net/npm/mux.js@5.6.7/dist/mux.min.js"></script>
+   <script src='//cdn.jsdelivr.net/npm/level-selector@latest/dist/level-selector.min.js'></script>
+   <script src='//cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js'></script>
+   <script src='//cdn.jsdelivr.net/npm/clappr-pip@latest/dist/clappr-pip.min.js'></script>
+   <script src='//cdn.jsdelivr.net/npm/clappr-playback-rate-plugin@latest/dist/clappr-playback-rate-plugin.min.js'></script>
+   <script src="//cdn.jsdelivr.net/npm/shaka-player@2.5.10/dist/shaka-player.compiled.min.js"></script>
+   <script src="//cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.external.min.js"></script>
+   <script src="//cdn.jsdelivr.net/npm/cdnbye-shaka@latest"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
+   <style> 
+   
+   .player-poster[data-poster] {
+     background-size: cover;
+   }
+   body{
+     margin:0;
+     padding:0;
+   }
+   
+   </style>
+   </head>
+   <div id="player"></div>
+   <script>
+    var playerInstance=jwplayer("player");
+    playerInstance.setup({
+    
+        playlist: [{
+    
+          "sources": [
+            {
+              "default": false,
+              "type": "dash",
+              "file": "https://dce-ak-livewwdazn.akamaized.net/dashdrm/dazn-linear-038/stream.mpd?p=web",
+              "drm": {
+                "clearkey": {"keyId":"82f8e2a17dac44c0a18f660479349c59", "key":"1b144f73e6fefe91cd05f850e2b589d0"}
+              },
+              "label": "0",
+              "pictureInPicture": "true"
+            }
+          ]
+        }],
+        height: '75%',
+        width: '75%',
+        autostart: false,
+        cast: {},
+        sharing: {}
+    });
+    </script>
