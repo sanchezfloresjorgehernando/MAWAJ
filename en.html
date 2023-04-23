@@ -1,0 +1,569 @@
+
+
+  
+
+
+
+
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>ESPN peru</title>
+    
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <style>
+       body {
+      margin: 0;
+       background: #000000;
+      font-family: 'arial', sans serif;
+    }
+    .contenedor {
+      background: #000000;
+      width: 50%;
+      margin: 0 auto;
+      padding: 10px 10px;
+      text-align: justify;
+    }
+    
+    .contenedor img {
+      width: 100%;
+    }
+    
+    @media (max-width:600px)  { 
+      .contenedor {
+        width: 90%;
+      }
+    }
+    
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 15px;
+        height: 0;
+         overflow: hidden;
+    }
+    
+    .video-container iframe {
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .topnav {
+      overflow: hidden;
+      background-color: #000000;
+    }
+    
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 12px;
+    }
+    
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    
+    .topnav a.active {
+      background-color: #68C420;
+      color: white;
+    }
+    
+    .topnav .icon {
+      display: none;
+    }
+    
+
+
+#changeVideo {
+  position: absolute;
+background-color: black;
+  top: 0px;
+  left: 0px;
+
+  opacity: 0;
+  transition: opacity .3s ease;
+  cursor: pointer;
+
+  height: 100%;
+    width:170px;
+    border: 1 px transparent;
+    font-family: 'GestaRegular', Arial, Helvetica, sans-serif;
+    overflow: auto;
+
+  /* Additional styles just to increase visual appeal */
+  color: red;
+  font-weight: bold;
+  line-height: 25px;
+  text-align: LEFT;
+  /* End */
+}
+
+/* On hovering the video, show the button */
+video:hover~#changeVideo {
+  opacity: 1.5;
+
+}
+
+#changeVideo:hover {
+  opacity: 1;
+  color:#ff0000;
+}
+
+
+
+
+
+
+::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-track{
+
+  border: 0ch transparent;
+
+}
+
+
+button {
+margin: 0ch;
+text-align: left;
+text-decoration: none;
+font-size: 12px;
+cursor: pointer;
+  font-weight: bold;
+  width:120px;
+ position: absolute;
+  background-color: transparent;
+  outline: none;
+text-decoration: aliceblue;
+   border: solid gray;
+    padding: 5px; color: rgb(238, 231, 231);
+      border-radius: 2px;
+
+}
+button:focus {
+  border: none;
+  background-color: rgb(255, 9, 9);
+}
+
+button:hover {
+background-color: rgb(243, 7, 7);
+
+}
+
+            .button {
+ background-color: transparent;
+  border: 3px solid Black;
+  align:right;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+    font-weight: bold;
+    width: 115px;
+ border: none;
+  background-color: transparent;
+  outline: none;
+text-decoration: aliceblue;
+   border: solid gray;
+  padding: 5px; color: rgb(238, 231, 231);
+      border-radius: 2px;
+  }
+    </style>
+  
+    </head>
+    
+    <body>
+     
+      <div class="contenedor">
+        <div class="topnav" id="myTopnav">
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+      <p align="right">
+        <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" /> </p>
+    <div class="video-container">Loading the player...
+     
+     
+          <iframe id="iframe" width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen="true" allow="autoplay; encrypted-media;" name="iframe" src=""></iframe>
+           
+     </div>
+ 
+     <div id="changeVideo">  
+        <ul>
+          <li> <button onclick="mostrarMensaje1()">LOCAL-NOW</button></li>
+          <li><button onclick="mostrarMensaje2()">FEVER</button></li>
+          <li><button onclick="mostrarMensaje3()">DESTINATIONS</button></li>
+          <li><button onclick="mostrarMensaje4()">JOURNY</button></li>
+          <li><button onclick="mostrarMensaje5()">SWERVE</button></li>
+          <li><button onclick="mostrarMensaje6()">LET's DINE</button></li>
+          <li><button onclick="mostrarMensaje7()">KIN</button></li>
+          <li><button onclick="mostrarMensaje8()">JUDJE</button></li>
+          <li> <button onclick="mostrarMensaje9()">TV-US</button></li>
+          <li><button onclick="mostrarMensaje10()">TV-US1</button></li>
+          <li><button onclick="mostrarMensaje11()">TV-US2</button></li>
+          <li><button onclick="mostrarMensaje12()">CRIME</button></li>
+          <li><button onclick="mostrarMensaje13()">JOURNY</button></li>
+          <li><button onclick="mostrarMensaje14()">OVATION</button></li>
+          <li><button onclick="mostrarMensaje15()">JOURNY-03</button></li>
+          <li><button onclick="mostrarMensaje16()">MEDIA+</button></li>
+              <li> <button onclick="mostrarMensaje17()">TV-US3</button></li>
+              <li><button onclick="mostrarMensaje18()">TV-US4</button></li>
+              <li><button onclick="mostrarMensaje19()">TV-US5</button></li>
+              <li><button onclick="mostrarMensaje20()">POPSTAR</button></li>
+              <li><button onclick="mostrarMensaje21()">US6</button></li>
+              <li><button onclick="mostrarMensaje22()">FC-TV</button></li>
+              <li><button onclick="mostrarMensaje23()">VERY-LOCAL</button></li>
+              <li><button onclick="mostrarMensaje24()">REVRY</button></li>
+                  <li> <button onclick="mostrarMensaje25()">REVRY-NEWS</button></li>
+                  <li> <button onclick="mostrarMensaje26()">VIDEOS</button></li>
+                  <li> <button onclick="mostrarMensaje27()">NEWS</button></li>
+                  <li> <button onclick="mostrarMensaje28()">PATTRN</button></li>
+                  <li> <button onclick="mostrarMensaje29()">SCRIPS-NEWS</button></li>
+                  <li> <button onclick="mostrarMensaje30()">FISH</button></li>
+                  <li> <button onclick="mostrarMensaje31()">QUIETUDE</button></li>
+                  <li> <button onclick="mostrarMensaje32()">US7</button></li>
+                  <li> <button onclick="mostrarMensaje33()">GRIT-EXTRA</button></li>
+                  <li> <button onclick="mostrarMensaje34()">COURT-TV</button></li>
+                  <li> <button onclick="mostrarMensaje35()">COMEDY-TV</button></li>
+                  <li> <button onclick="mostrarMensaje36()">JUSTICE</button></li>
+                  <li> <button onclick="mostrarMensaje37()">VERY-LOCAL</button></li>
+                  <li> <button onclick="mostrarMensaje38()">WOODS</button></li>
+                  <li> <button onclick="mostrarMensaje39()">HELL</button></li>
+                  <li> <button onclick="mostrarMensaje40()">VINTAGE</button></li>
+                  <li> <button onclick="mostrarMensaje41()">MOVIES</button></li>
+                  <li> <button onclick="mostrarMensaje42()">ZEN</button></li>
+                  <li> <button onclick="mostrarMensaje43()">VIRAL</button></li>
+                  <li> <button onclick="mostrarMensaje44()">LOCAL-FANY</button></li>
+                  <li> <button onclick="mostrarMensaje45()">LOCAL-FAMILY</button></li>
+                  <li> <button onclick="mostrarMensaje46()">NBC SPORTS</button></li>
+                  <li> <button onclick="mostrarMensaje47()">beIN SPORTS</button></li>
+                  <li> <button onclick="mostrarMensaje48()">beIN SPORTS Ñ</button></li>
+                  <li> <button onclick="mostrarMensaje49()">beIN SPORTS Ñ</button></li>
+                  <li> <button onclick="mostrarMensaje50()">ESPN US</button></li>
+                  <li> <button onclick="mostrarMensaje51()">ESPN 2US</button></li>
+                  <li> <button onclick="mostrarMensaje52()">GOLTV</button></li>
+                  <li> <button onclick="mostrarMensaje53()">UFC PASS</button></li>
+                  <li> <button onclick="mostrarMensaje54()">TUDN USA</button></li>
+                  <li> <button onclick="mostrarMensaje55()">TUDN USA1</button></li>
+                  <li> <button onclick="mostrarMensaje56()">TELEMUNDO</button></li>
+                  <li> <button onclick="mostrarMensaje57()">UNIVERSO</button></li>
+      </ul>
+      </div>
+
+    </div>
+
+
+  
+    <script type="text/javascript">
+        function mostrarMensaje1() {
+      document.getElementById("iframe").src = "localnow.html"
+      
+      }
+      
+      
+      function mostrarMensaje2() {
+      document.getElementById("iframe").src = "fever.html"
+      }
+      
+      function mostrarMensaje3() { 
+      
+        document.getElementById("iframe").src = "distinations.html"
+      
+      
+      }
+      
+      function mostrarMensaje4() {
+      document.getElementById("iframe").src = "jorny.html"
+      }
+      
+      function mostrarMensaje5() {
+      document.getElementById("iframe").src = "swarve.html"
+      }
+        
+        
+      function mostrarMensaje6() {
+      document.getElementById("iframe").src = "dina.html"
+      }
+        
+       
+      function mostrarMensaje7() {
+      document.getElementById("iframe").src = "kin.html"
+      }
+        
+        
+        function mostrarMensaje8() {
+      document.getElementById("iframe").src = "judje.html"
+      }
+        
+          function mostrarMensaje9() {
+      document.getElementById("iframe").src = "tvus.html"
+      }
+        
+        
+        
+          function mostrarMensaje10() {
+      document.getElementById("iframe").src = "tvus1.html"
+      }
+        
+        
+            function mostrarMensaje11() {
+      document.getElementById("iframe").src = "tvus2.html"
+      }
+        
+        
+              function mostrarMensaje12() {
+      document.getElementById("iframe").src = "crime.html"
+      }
+        
+        
+        
+                function mostrarMensaje13() {
+      document.getElementById("iframe").src = "journy.html"
+      }
+        
+        
+                  function mostrarMensaje14() {
+      document.getElementById("iframe").src = "ovation.html"
+      }
+        
+        
+                  function mostrarMensaje15() {
+      document.getElementById("iframe").src = "journy3.html"
+      }
+                    function mostrarMensaje16() {
+      document.getElementById("iframe").src = "media+.html"
+      }
+        
+        
+                      function mostrarMensaje17() {
+      document.getElementById("iframe").src = "tvus3.html"
+      }
+        
+        
+                        function mostrarMensaje18() {
+      document.getElementById("iframe").src = "tvus4.html"
+      }
+                          function mostrarMensaje19() {
+      document.getElementById("iframe").src = "tvus5.html"
+      }
+        
+        
+            function mostrarMensaje20() { 
+      document.getElementById("iframe").src = "popstar.html"
+      }
+              function mostrarMensaje21() { 
+      document.getElementById("iframe").src = "chopertown.html"
+      }
+        
+        
+                function mostrarMensaje22() { 
+      document.getElementById("iframe").src = "fctv.html"
+      }
+        
+        
+                  function mostrarMensaje23() { 
+      document.getElementById("iframe").src = "verylocal.html"
+      }
+        
+        
+                    function mostrarMensaje24() { 
+      document.getElementById("iframe").src = "revry.html"
+      }
+        
+        
+                      function mostrarMensaje25() { 
+      document.getElementById("iframe").src = "revrynews.html"
+      }
+        
+                        function mostrarMensaje26() { 
+      document.getElementById("iframe").src = "videos.html"
+      }
+        
+        
+                          function mostrarMensaje27() {
+      document.getElementById("iframe").src = "news.html"
+      }
+        
+                            function mostrarMensaje28() { 
+      document.getElementById("iframe").src = "pattrn.html"
+      }
+        
+        
+                              function mostrarMensaje29() { 
+      document.getElementById("iframe").src = "scrips-news.html"
+      }
+        
+        
+                                function mostrarMensaje30() { 
+      document.getElementById("iframe").src = "fish.html"
+      }
+        
+        
+                                  function mostrarMensaje31() {
+      document.getElementById("iframe").src = "quietude.html"
+      }
+        
+        
+                                    function mostrarMensaje32() { 
+      document.getElementById("iframe").src = "us6.html"
+      }
+        
+                                      function mostrarMensaje33() {
+      document.getElementById("iframe").src = "grit.html"
+      }
+        
+        
+                                        function mostrarMensaje34() { 
+      document.getElementById("iframe").src = "golo.html"
+      }
+        
+        
+                                          function mostrarMensaje35() { 
+      document.getElementById("iframe").src = "comedy.html"
+      }
+        
+        
+                                            function mostrarMensaje36() { 
+      document.getElementById("iframe").src = "justice.html"
+      }
+        
+                                              function mostrarMensaje37() { 
+      document.getElementById("iframe").src = "discovry.html"
+      }
+        
+        
+                                                function mostrarMensaje38() { 
+      document.getElementById("iframe").src = "fatgay.html"
+      }
+        
+        
+                                                 function mostrarMensaje39() { 
+      document.getElementById("iframe").src = "hell.html"
+      }
+        
+        
+        
+        
+                                                   function mostrarMensaje40() {
+      document.getElementById("iframe").src = "vintage.html"
+      }
+        
+        
+        
+                                                     function mostrarMensaje41() { 
+      document.getElementById("iframe").src = "movies.html"
+      }
+        
+        
+        
+                                                       function mostrarMensaje42() { 
+      document.getElementById("iframe").src = "zen.html"
+      }
+        
+                                                         function mostrarMensaje43() { 
+      document.getElementById("iframe").src = "viral.html"
+      }
+        
+        
+                                                           function mostrarMensaje44() { 
+      document.getElementById("iframe").src = "localfany.html"
+      }
+        
+                                                             function mostrarMensaje45() { 
+      document.getElementById("iframe").src = "localfamily.html"
+      }
+        
+        
+                                                               function mostrarMensaje46() { 
+      document.getElementById("iframe").src = "https://player.zorrohd.nl/online.php?a=10"
+      }
+        
+                                                                 function mostrarMensaje47() {
+      document.getElementById("iframe").src = "https://player.zorrohd.nl/online.php?a=76"
+      }
+        
+        
+                    function mostrarMensaje48() {
+      document.getElementById("iframe").src = "https://player.zorrohd.nl/online.php?a=9"
+      }
+      
+      function mostrarMensaje49() {
+      document.getElementById("iframe").src = "https://1rowsportz.info/player/1/101"
+      }
+
+      function mostrarMensaje50() {
+      document.getElementById("iframe").src = "https://player.zorrohd.nl/online.php?a=77"
+      }
+      function mostrarMensaje51() {
+      document.getElementById("iframe").src = "https://player.zorrohd.nl/online.php?a=78"
+      }
+      function mostrarMensaje52() {
+      document.getElementById("iframe").src = "https://player.zorrohd.nl/online.php?a=4700"
+      }
+      function mostrarMensaje53() {
+      document.getElementById("iframe").src = "https://player.zorrohd.nl/online.php?a=4550"
+      }
+      function mostrarMensaje54() {
+      document.getElementById("iframe").src = "https://player.zorrohd.nl/online.php?a=17"
+      }
+      function mostrarMensaje55() {
+      document.getElementById("iframe").src = "https://1rowsportz.info/player/1/100"
+      }
+      function mostrarMensaje56() {
+      document.getElementById("iframe").src = "https://player.zorrohd.nl/online.php?a=7429"
+      }
+      function mostrarMensaje57() {
+      document.getElementById("iframe").src = "https://player.zorrohd.nl/online.php?a=4943"
+      }
+
+        
+      </script>
+
+
+    <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
+    <footer>
+    
+    
+    
+    </footer>
+
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+  
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></body></html>
